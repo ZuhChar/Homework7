@@ -15,7 +15,7 @@ RM= rm -f
 
 .PHONY: all clean tidy
 
-all: wytalkC
+all: wytalkC wytalkD
 
 wytalkC: wytalkC.c
 	${CC} ${CFLAGS} wytalkC.c socketfun.c -o wytalkC
