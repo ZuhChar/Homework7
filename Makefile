@@ -24,7 +24,7 @@ wytalkD: wytalkD.c
 	${CC} ${CFLAGS} wytalkD.c socketfun.c -o wytalkD
 
 clean:
-	${RM} *.o wytar
+	${RM} *.o wytalkC wytalkD
 
 tidy:
-	${RM} a.out core.* wytar
+	${RM} a.out core.* wytalkC wytalkD
