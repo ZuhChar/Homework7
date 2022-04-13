@@ -32,7 +32,7 @@ int main(int argc, char const *argv[])
         perror("socket failed");
         exit(EXIT_FAILURE);
     }
-
+    printf("Socket successful.");
     // Forcefully attaching socket to the port 8080
     if (setsockopt(server_fd, SOL_SOCKET,
                    SO_REUSEADDR | SO_REUSEPORT, &opt,
