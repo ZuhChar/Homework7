@@ -10,6 +10,9 @@
 //  Collaborated with Ian Moon on this Homework
 //
 
+#include "socketfun.h"
+#include "unistd.h"
+
 int main(){
 
 }
