@@ -22,11 +22,10 @@ int main()
 
     sfd = serve_socket(host, 51100);
     confd = accept_connection(sfd);
-    do
-    {
-        message = recv(socket, buffer, size, 0);
-        if (message < 0)
-            perror("recv() failed");
-        printf("%s\n", buffer);
-    }
+
+    message = recv(socket, buffer, size, 0);
+    
+    if (message < 0)
+        perror("recv() failed");
+    printf("%s\n", buffer);
 }
