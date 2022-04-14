@@ -31,12 +31,13 @@ int main()
 	{
 		// scanf("%s", buffer);
 		frtn = fgets(buffer, size-1, stdin);
+		fprintf("%s",buffer);
 		if(frtn == NULL) {
 			close(socket);
 			return 0;
 		}
-		fprintf("%s",buffer);
-		
+;
+
 		rtn = send(frtn,buffer,strlen(buffer),0);
 		if(rtn < 1) {
 			close(socket);
