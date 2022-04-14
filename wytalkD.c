@@ -23,10 +23,13 @@ int main()
 
     sfd = serve_socket("fish10", 51100);
     confd = accept_connection(sfd);
+    if (sfd >= 0)
+    {
+        confd = accept_connection(sfd);
+    }
 
     message = recv(socket, buffer, size, 0);
 
-    if (message < 0)
-        perror("recv() failed");
-    printf("%s\n", buffer);
+    printf("%.*s\n", message, buffer);
+    memset(&buffer, 0, sizeof(buffer));
 }
