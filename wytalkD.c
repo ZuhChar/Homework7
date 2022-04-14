@@ -32,7 +32,8 @@ int main()
         while (1)
         {
             message = recv(socket, buffer, size, 0);
-            printf("%.*s\n", message, buffer);
+            if (message > 0)
+                printf("%.*s\n", message, buffer);
             memset(&buffer, 0, sizeof(buffer));
         }
     }
