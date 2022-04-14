@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	char buffer[128];
 	int socket = 51100;
 	int length = 128;
-	char *ch;
+	char ch;
 	int index;
 	char *rtn;
 	char *frtn;
@@ -35,13 +35,13 @@ int main(int argc, char **argv)
 		if(frtn < 0){
 			break;
 		}
-		write(socket, buffer, length);
+		write( conft, buffer, length);
 		while (1)
 		{
-			rtn = read(socket, &ch, 1);
+			rtn = read(conft, &ch, 1);
 			if (rtn < 0)
 			{
-				close(51100);
+				close(conft);
 				return 0;
 			}
 			buffer[index] = ch;
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
 		}
 		printf("%s", buffer);
 	}
-	close(51100);
+	close(conft);
 	printf("port closed\n");
 	return 0;
 }

@@ -34,13 +34,13 @@ int main()
         printf("connection established \n");
         while (1)
         {
-            recv(socket, &buffer, size, 0);
+            recv(confd, &buffer, size, 0);
             if (message > 0)
                 printf("%s",  buffer);
             else
                 break;
         }
-        close(51100);
+        close(conft);
     }
 
     // if(message < 0)
