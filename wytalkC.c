@@ -21,7 +21,7 @@ int main()
 
 	int conft = 0;
 
-	conft = request_connection("fish20", 51100);
+	conft = request_connection("This", 51100);
 	printf("connection made \n");
 	while (1)
 	{
