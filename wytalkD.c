@@ -22,12 +22,13 @@ int main()
     int confd = 0;
 
     sfd = serve_socket("fish10", 51100);
+    printf("server created");
     confd = accept_connection(sfd);
     if (sfd >= 0)
     {
         confd = accept_connection(sfd);
     }
-
+    printf("connection established");
     message = recv(socket, buffer, size, 0);
 
     printf("%.*s\n", message, buffer);
