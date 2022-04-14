@@ -23,4 +23,5 @@ int main(){
 	conft = request_connection("fish10", 51100);
 	printf("connection made \n");
 	ssize_t send(socket, buffer, length, flags);
+	close(51100);
 }
