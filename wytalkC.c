@@ -16,7 +16,7 @@
 #include <unistd.h>
 #define size 128
 
-int main()
+int main(int argc, char **argv)
 {
 	char buffer[128];
 	int socket = 51100;
@@ -37,7 +37,7 @@ int main()
 	{
 		index = 0;
 		frtn = fgets(buffer, size, stdin);
-		
+
 		if(frtn < 0) {
 			close(socket);
 			return 0;
@@ -48,7 +48,7 @@ int main()
 		while(1) {
 			rtn = read(socket, &ch, 1);
 			if(rtn < 0) {
-				clode(51100);
+				close(51100);
 				return 0;
 			}
 			buffer[index] = ch;
