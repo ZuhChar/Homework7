@@ -14,7 +14,7 @@
 
 int main()
 {
-	char *buffer[128];
+	char buffer[128];
 	// int socket = 51100;
 	int length = 128;
 	int flags = 0;
@@ -25,6 +25,7 @@ int main()
 	printf("connection made \n");
 	while (1)
 	{
+		scanf("%s", &buffer);
 		ssize_t message = send(socket, buffer, length, flags);
 	}
 	close(51100);
