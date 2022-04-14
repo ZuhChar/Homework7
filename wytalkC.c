@@ -35,13 +35,14 @@ int main()
 			close(socket);
 			return 0;
 		}
+		fprintf("%s",buffer);
+		
 		rtn = send(frtn,buffer,strlen(buffer),0);
 		if(rtn < 1) {
 			close(socket);
 			return 0;
 		}
-		printf("Your message: %s", buffer);
-		send(socket, &buffer, length, flags);
+		
 	}
 	close(51100);
 	printf("port closed\n");
