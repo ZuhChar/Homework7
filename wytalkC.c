@@ -11,16 +11,22 @@
 */
 
 #include "socketfun.h"
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 #define size 128
 
 int main()
 {
 	char buffer[128];
 	int socket = 51100;
-	int length = 128;
-	int flags = 0;
-	char* frtn, rtn;
-	int conft = 0;
+	char *ch;
+	int index;
+	char *rtn;
+	char *frtn;
+	int conft;
+
+
 
 	printf("Enter host name: ");
 	scanf("%s", buffer);
@@ -29,21 +35,28 @@ int main()
 	printf("connection made \n");
 	while (1)
 	{
-		// scanf("%s", buffer);
-		frtn = fgets(buffer, size-1, stdin);
-		fprintf("%s",frtn);
-		if(frtn == NULL) {
-			close(socket);
-			return 0;
-		}
-
-
-		rtn = send(frtn,buffer,strlen(buffer),0);
-		if(rtn < 1) {
-			close(socket);
-			return 0;
-		}
+		index = 0;
+		frtn = fgets(buffer, size, stdin);
 		
+		if(frtn < 0) {
+			close(socket);
+			return 0;
+		}
+
+		write(socket, buffer, size);
+
+		while(1) {
+			rtn = read(socket, &ch, 1);
+			if(rtn < 0) {
+				clode(51100);
+				return 0;
+			}
+			buffer[index] = ch;
+			if(ch == '\n')
+				break;
+			if(index == (size - 2))
+				break;
+		}
 	}
 	close(51100);
 	printf("port closed\n");

@@ -13,19 +13,21 @@
 
 #include "socketfun.h"
 #include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 int main()
 {
     int socket = 51100;
-    char buffer[128] = {0};
+    char buffer[128];
     int size = 128;
     ssize_t mess = 0;
     int sfd = 0;
-    char *rtn;
+    char hostname[512];
     int confd = 0;
-    int index = 0;
 
-    sfd = serve_socket("fish10", 51100);
+    gethostname(hostname,512);
+    sfd = serve_socket(hostname, 51100);
     printf("server created \n");
     // confd = accept_connection(sfd);
     if (sfd >= 0)
@@ -34,15 +36,13 @@ int main()
         printf("connection established \n");
         while (1)
         {
-            // mess = 0;
-            mess = read(socket, &buffer, size, 0);
+            recv(socket, &buffer, size, 0);
             if (mess > 0)
                 printf("%.*s\n", mess, buffer);
-            memset(&buffer, 0, sizeof(buffer));
+            else
+                break;
         }
+        close(51100);
     }
 
-    if (mess < 0)
-        close(51100);
-    printf("port closed\n");
 }
