@@ -20,6 +20,6 @@ int main(){
 
 	int conft = 0;
 
-	conft = request_connection("fish", 51100);
+	conft = request_connection("fish10", 51100);
 	ssize_t send(socket, buffer, length, flags);
 }
