@@ -13,5 +13,10 @@
 #include "socketfun.h"
 
 int main(){
+	char* buffer[128];
+	int socket = 51100;
+	int length = 128;
+	int flags = 0;
 	conft = request_connection(host, 51100);
+	ssize_t send(socket, buffer, length, flags);
 }
