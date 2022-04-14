@@ -26,7 +26,7 @@ int main()
 	while (1)
 	{
 		scanf("%s", buffer);
-		printf("Your message:", buffer);
+		printf("Your message:%s", buffer);
 		send(socket, buffer, length, flags);
 	}
 	close(51100);
