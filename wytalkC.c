@@ -18,6 +18,8 @@ int main(){
 	int length = 128;
 	int flags = 0;
 	char host = "fish";
+	int conft = 0;
+	
 	conft = request_connection(host, 51100);
 	ssize_t send(socket, buffer, length, flags);
 }
