@@ -15,7 +15,7 @@
 int main()
 {
 	char buffer[128];
-	int socket = 51100;
+	int socket = 51100, valread;
 	int length = 128;
 	int flags = 0;
 
@@ -28,9 +28,9 @@ int main()
 		scanf("%s", buffer);
 		// printf("Your message:%s", buffer);
 		// send(socket, &buffer, length, flags);
-		send(sock, buffer, strlen(buffer), 0);
+		send(socket, buffer, strlen(buffer), 0);
 		printf("Hello message sent\n");
-		valread = read(sock, buffer, 1024);
+		valread = read(socket, buffer, 1024);
 		printf("%s\n", buffer);
 	}
 	close(51100);
