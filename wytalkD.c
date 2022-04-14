@@ -16,7 +16,6 @@
 
 int main()
 {
-    int socket = 51100;
     char buffer[128];
     int size = 128;
     ssize_t message = 0;
@@ -40,7 +39,7 @@ int main()
             else
                 break;
         }
-        close(conft);
+        close(confd);
     }
 
     // if(message < 0)
