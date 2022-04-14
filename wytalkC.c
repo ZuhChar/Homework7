@@ -11,9 +11,10 @@
 //
 
 #include "socketfun.h"
- 
-int main(){
-	char* buffer[128];
+
+int main()
+{
+	char *buffer[128];
 	// int socket = 51100;
 	int length = 128;
 	int flags = 0;
@@ -22,7 +23,11 @@ int main(){
 
 	conft = request_connection("fish11", 51100);
 	printf("connection made \n");
-	ssize_t send(socket, buffer, length, flags);
+	while (1)
+	{
+		if (ssize_t send(socket, buffer, length, flags) == 0)
+			break;
+	}
 	close(51100);
 	printf("port closed\n");
 }
