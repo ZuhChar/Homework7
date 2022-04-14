@@ -26,8 +26,12 @@ int main()
 	while (1)
 	{
 		scanf("%s", buffer);
-		printf("Your message:%s", buffer);
-		send(socket, &buffer, length, flags);
+		// printf("Your message:%s", buffer);
+		// send(socket, &buffer, length, flags);
+		send(sock, buffer, strlen(buffer), 0);
+		printf("Hello message sent\n");
+		valread = read(sock, buffer, 1024);
+		printf("%s\n", buffer);
 	}
 	close(51100);
 	printf("port closed\n");

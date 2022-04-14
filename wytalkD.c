@@ -31,10 +31,14 @@ int main()
         printf("connection established \n");
         while (1)
         {
-            recv(socket, &buffer, size, 0);
-            if (message > 0)
-                printf("%.*s\n", message, buffer);
-            memset(&buffer, 0, sizeof(buffer));
+            // recv(socket, &buffer, size, 0);
+            // if (message > 0)
+            //     printf("%.*s\n", message, buffer);
+            // memset(&buffer, 0, sizeof(buffer));
+            valread = read(socket, buffer, 1024);
+            printf("%s\n", buffer);
+            send(socket, buffer, strlen(buffer), 0);
+            printf("Hello message sent\n");
         }
     }
 
