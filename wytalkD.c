@@ -29,8 +29,6 @@ int main()
 
     message = recv(socket, buffer, size, 0);
 
-    if (message == 0)
-        break;
     printf("%.*s\n", message, buffer);
     memset(&buffer, 0, sizeof(buffer));
 }
