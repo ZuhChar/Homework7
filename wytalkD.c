@@ -22,7 +22,7 @@ int main()
 
     int confd = 0;
 
-    sfd = serve_socket("fish", 51100);
+    sfd = serve_socket("fish10", 51100);
     printf("server created \n");
     // confd = accept_connection(sfd);
     if (sfd >= 0)
