@@ -1,21 +1,22 @@
 # 
 # Makefile
-# Author: Zachary Crimmel
-# Date: Apr 12, 2022
+# Author: Ian Moon
+# Date: Apr 13, 2022
 #
 # COSC 3750, Homework 7
 #
-# This is a Makefile designed to compile the wytar.c file
-# Collaborated with Ian Moon on this Homework
+# This is a Makefile designed to compile the socketfun.c/h, 
+# wytalkD.c and wytalkC.c file
+# Collaborated with Zach Chrimmel on this Homework
 #
 
 CC=gcc
 CFLAGS= -Wall -ggdb
 RM= rm -f
 
-.PHONY: all clean tidy
+.PHONY: full clean tidy
 
-all: wytalkC wytalkD
+full: wytalkC wytalkD
 
 wytalkC: wytalkC.c
 	${CC} ${CFLAGS} wytalkC.c socketfun.c -o wytalkC
