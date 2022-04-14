@@ -25,7 +25,7 @@ int main()
 	printf("connection made \n");
 	while (1)
 	{
-		scanf("%s", &buffer);
+		scanf("%s", buffer);
 		printf("Your message:", buffer);
 		send(socket, buffer, length, flags);
 	}
