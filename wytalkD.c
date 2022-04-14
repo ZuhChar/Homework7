@@ -10,17 +10,22 @@
 //
 #include "socketfun.h"
 
-int main(){
+int main()
+{
     int socket = 51100;
-    char* buffer = 128;
+    char *buffer = 128;
     int size = 128;
     ssize_t message = 0;
+    int sfd = 0;
+    char host = "fish";
+    int confd = 0;
 
-    sfd = serve_socket(fish, 51100);
+    sfd = serve_socket(host, 51100);
     confd = accept_connection(sfd);
-    do{
+    do
+    {
         message = recv(socket, buffer, size, 0);
-        if( message < 0 )
+        if (message < 0)
             perror("recv() failed");
         printf("%s\n", buffer);
     }
