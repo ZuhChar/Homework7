@@ -18,7 +18,6 @@
 int main(int argc, char **argv)
 {
 	char buffer[128];
-	int socket = 51100;
 	int length = 128;
 	char ch;
 	int index;
