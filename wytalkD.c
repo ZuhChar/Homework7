@@ -22,11 +22,15 @@ int main()
     int confd = 0;
 
     sfd = serve_socket("fish", 51100);
-    confd = accept_connection(sfd);
+    if (sfd >= 0)
+    {
+        confd = accept_connection(sfd);
+    }
 
     message = recv(socket, buffer, size, 0);
 
-    if (message < 0)
-        perror("recv() failed");
-    printf("%s\n", buffer);
+    if (message == 0)
+        break;
+    printf("%.*s\n", message, buffer);
+    memset(&buffer, 0, sizeof(buffer));
 }
