@@ -14,12 +14,15 @@
  
 int main(){
 	char* buffer[128];
-	int socket = 51100;
+	// int socket = 51100;
 	int length = 128;
 	int flags = 0;
 
 	int conft = 0;
 
-	conft = request_connection("fish", 51100);
+	conft = request_connection("fish10", 51100);
+	printf("connection made \n");
 	ssize_t send(socket, buffer, length, flags);
+	close(51100);
+	printf("port closed\n");
 }
