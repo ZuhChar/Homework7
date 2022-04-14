@@ -17,7 +17,7 @@ int main(){
 	int socket = 51100;
 	int length = 128;
 	int flags = 0;
-	char host = 51100;
+
 	int conft = 0;
 
 	conft = request_connection("fish", 51100);

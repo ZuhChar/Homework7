@@ -18,7 +18,7 @@ int main()
     int size = 128;
     ssize_t message = 0;
     int sfd = 0;
-    char host = 51100;
+
     int confd = 0;
 
     sfd = serve_socket("fish", 51100);
