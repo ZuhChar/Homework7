@@ -25,7 +25,8 @@ int main()
 	printf("connection made \n");
 	while (1)
 	{
-		if (ssize_t send(socket, buffer, length, flags) == 0)
+		ssize_t message = send(socket, buffer, length, flags);
+		if (message == 0)
 			break;
 	}
 	close(51100);
