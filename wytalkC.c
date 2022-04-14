@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	int index;
 	char *rtn;
 	char *frtn;
-	int conft;
+	int conft = 0;
 
 	conft = request_connection(argv[1], 51100);
 	printf("connection made \n");

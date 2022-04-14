@@ -22,7 +22,8 @@ int main()
     ssize_t message = 0;
     int sfd = 0;
     char hostname[512];
-    
+    int confd = 0;
+
     gethostname(hostname,512);
     sfd = serve_socket(hostname, 51100);
     printf("server created \n");
