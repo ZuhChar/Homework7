@@ -38,7 +38,7 @@ int main()
             valread = read(socket, buffer, 1024);
             printf("%s\n", buffer);
             send(socket, buffer, strlen(buffer), 0);
-            printf("Hello message sent\n");
+            //printf("Hello message sent\n");
         }
     }
 
