@@ -11,7 +11,6 @@
 */
 
 #include "socketfun.h"
-#define size 128
 
 int main()
 {
@@ -19,7 +18,7 @@ int main()
 	int socket = 51100;
 	int length = 128;
 	int flags = 0;
-	char* frtn, rtn;
+
 	int conft = 0;
 
 	printf("Enter host name: ");
@@ -29,17 +28,7 @@ int main()
 	printf("connection made \n");
 	while (1)
 	{
-		// scanf("%s", buffer);
-		frtn = fgets(buffer, size-1, stdin);
-		if(frtn == NULL) {
-			close(socket);
-			return 0;
-		}
-		rtn = send(frtn,buffer,strlen(buffer),0);
-		if(rtn < 1) {
-			close(socket);
-			return 0;
-		}
+		scanf("%s", buffer);
 		printf("Your message: %s", buffer);
 		send(socket, &buffer, length, flags);
 	}
