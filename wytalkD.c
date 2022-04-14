@@ -13,7 +13,7 @@
 
 int main()
 {
-    int socket = 51100;
+    // int socket = 51100;
     char buffer[128];
     int size = 128;
     ssize_t message = 0;

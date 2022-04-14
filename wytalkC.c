@@ -14,7 +14,7 @@
  
 int main(){
 	char* buffer[128];
-	int socket = 51100;
+	// int socket = 51100;
 	int length = 128;
 	int flags = 0;
 
