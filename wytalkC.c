@@ -12,20 +12,21 @@
 
 #include "socketfun.h"
 #include <string.h>
+#include<stdlib.h>
 
-int main()
+int main(int argc, char **argv)
 {
 	char buffer[128];
 	int socket = 51100;
 	int length = 128;
 	int flags = 0;
-	char ch;
+	char *ch;
 	int index;
 	int conft = 0;
 	char *rtn;
 	char *frtn;
 
-	conft = request_connection(gethostname(), 51100);
+	conft = request_connection(argv[1], 51100);
 	printf("connection made \n");
 	while (1)
 	{
@@ -47,7 +48,7 @@ int main()
 			{
 				break;
 			}
-			if (index == size - 2)
+			if (index == length - 2)
 			{
 				break;
 			}
