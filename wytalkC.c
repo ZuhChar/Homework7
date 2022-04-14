@@ -27,7 +27,7 @@ int main()
 	{
 		scanf("%s", buffer);
 		printf("Your message:%s", buffer);
-		send(socket, buffer, length, flags);
+		send(socket, &buffer, length, flags);
 	}
 	close(51100);
 	printf("port closed\n");

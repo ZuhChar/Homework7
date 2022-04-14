@@ -31,7 +31,7 @@ int main()
         printf("connection established \n");
         while (1)
         {
-            recv(socket, buffer, size, 0);
+            recv(socket, &buffer, size, 0);
             if (message > 0)
                 printf("%.*s\n", message, buffer);
             memset(&buffer, 0, sizeof(buffer));
