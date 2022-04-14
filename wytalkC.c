@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	int length = 128;
 	char ch;
 	int index;
-	char *rtn;
+	int rtn;
 	char *frtn;
 	int conft = 0;
 
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 				return 0;
 			}
 			buffer[index] = ch;
-			if (ch == "\n")
+			if (ch == '\n')
 			{
 				break;
 			}
