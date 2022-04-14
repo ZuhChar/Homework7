@@ -20,7 +20,7 @@ int main(){
 
 	int conft = 0;
 
-	conft = request_connection("fish10", 51100);
+	conft = request_connection("fish11", 51100);
 	printf("connection made \n");
 	ssize_t send(socket, buffer, length, flags);
 	close(51100);
