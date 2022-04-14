@@ -5,7 +5,7 @@
 #
 # COSC 3750, Homework 7
 #
-# This is a Makefile designed to compile the wytar.c file
+# This is a Makefile designed to compile the wytalkC.c and wytalkD.c file
 # Collaborated with Ian Moon on this Homework
 #
 
