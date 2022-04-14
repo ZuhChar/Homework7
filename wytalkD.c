@@ -21,7 +21,7 @@ int main()
     char host = 51100;
     int confd = 0;
 
-    sfd = serve_socket(host, 51100);
+    sfd = serve_socket("fish", 51100);
     confd = accept_connection(sfd);
 
     message = recv(socket, buffer, size, 0);
