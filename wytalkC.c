@@ -23,7 +23,6 @@ int main(int argc, char **argv)
 	int flags = 0;
 	char *ch;
 	int index;
-	int conft = 0;
 	char *rtn;
 	char *frtn;
 
@@ -31,6 +30,7 @@ int main(int argc, char **argv)
 	printf("connection made \n");
 	while (1)
 	{
+		index = 0;
 		frtn = fgets(buffer, length, stdin);
 		if(frtn < 0){
 			break;

@@ -16,14 +16,13 @@
 
 int main()
 {
-    int socket = 51100, valread;
+    int socket = 51100;
     char buffer[128];
     int size = 128;
     ssize_t message = 0;
     int sfd = 0;
     char hostname[512];
-
-    int confd = 0;
+    
     gethostname(hostname,512);
     sfd = serve_socket(hostname, 51100);
     printf("server created \n");
