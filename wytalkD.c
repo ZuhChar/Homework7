@@ -38,7 +38,7 @@ int main()
         {
             recv(socket, &buffer, size, 0);
             if (mess > 0)
-                printf("%.*s\n", mess, buffer);
+                printf("%s\n", buffer);
             else
                 break;
         }
