@@ -21,7 +21,10 @@ int main()
 
 	int conft = 0;
 
-	conft = request_connection("fish10", 51100);
+	printf("Enter host name: ");
+	scanf("%s", buffer);
+
+	conft = request_connection(buffer, 51100);
 	printf("connection made \n");
 	while (1)
 	{
