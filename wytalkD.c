@@ -13,7 +13,7 @@
 int main()
 {
     int socket = 51100;
-    char *buffer = 128;
+    char buffer[128];
     int size = 128;
     ssize_t message = 0;
     int sfd = 0;
@@ -24,7 +24,7 @@ int main()
     confd = accept_connection(sfd);
 
     message = recv(socket, buffer, size, 0);
-    
+
     if (message < 0)
         perror("recv() failed");
     printf("%s\n", buffer);
