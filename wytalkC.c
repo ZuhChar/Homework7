@@ -26,7 +26,7 @@ int main()
 	while (1)
 	{
 		scanf("%s", &buffer);
-		ssize_t message = send(socket, buffer, length, flags);
+		send(socket, buffer, length, flags);
 	}
 	close(51100);
 	printf("port closed\n");
