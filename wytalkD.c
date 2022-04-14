@@ -34,4 +34,5 @@ int main()
     printf("%.*s\n", message, buffer);
     memset(&buffer, 0, sizeof(buffer));
     close(51100);
+    printf("port closed");
 }

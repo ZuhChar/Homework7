@@ -24,4 +24,5 @@ int main(){
 	printf("connection made \n");
 	ssize_t send(socket, buffer, length, flags);
 	close(51100);
+	printf("port closed");
 }
