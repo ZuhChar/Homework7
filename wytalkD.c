@@ -28,12 +28,14 @@ int main()
     if (sfd >= 0)
     {
         confd = accept_connection(sfd);
+        printf("connection established \n");
+        while (1)
+        {
+            message = recv(socket, buffer, size, 0);
+            printf("%.*s\n", message, buffer);
+            memset(&buffer, 0, sizeof(buffer));
+        }
     }
-    printf("connection established \n");
-    message = recv(socket, buffer, size, 0);
-
-    printf("%.*s\n", message, buffer);
-    memset(&buffer, 0, sizeof(buffer));
 
     // if(message < 0)
     //     close(51100);
