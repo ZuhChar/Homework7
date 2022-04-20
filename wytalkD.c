@@ -22,6 +22,10 @@ int main()
     int sfd = 0;
     char hostname[512];
     int confd = 0;
+    int rtn;
+    int *frtn;
+    char ch;
+    int index;
 
     gethostname(hostname,512);
     sfd = serve_socket(hostname, 51100);
@@ -30,11 +34,23 @@ int main()
     if (sfd >= 0)
     {
         confd = accept_connection(sfd);
-        printf("connection established \n");
+        while(1){
+            rtn = read(conft, &ch, 1);
+            if (rtn < 0){
+                close(confd);
+                return 0;
+            }
+            buffer[index] = ch;
+            if (ch == '\n'){
+                
+            }
+        }
+        // confd = accept_connection(sfd);
+        // printf("connection established \n");
         while (1)
         {
             recv(confd, &buffer, size, 0);
-            if (message > 0)
+            if (buffer > 0)
                 printf("%s",  buffer);
             else
                 break;
